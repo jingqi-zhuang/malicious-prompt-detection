@@ -1,6 +1,6 @@
 # Malicious Prompt Detection Workflow for AI Chatbot
 
-<img src="images/chatbot.png" style="zoom:50%;" />
+<img src="images/chatbot.png" width="40%;" />
 
 My teammates and I are currently prototyping an AI chatbot specialized in answering property tax-related queries. As part of this project, I developed a **malicious prompt detection workflow** to safeguard the chatbot against adversarial inputs. The solution leverages an **86M-parameter pre-trained model**, fine-tuned on a compact, domain-specific dataset of approximately 200 records.
 
@@ -24,7 +24,7 @@ All training and testing datasets were constructed based on these five types of 
 
 The complete workflow consists of **three sequential layers**, forming a robust entry-point screening mechanism for all incoming prompts to the AI chatbot. In the following sections, I will walk through the implementation details of each layer.
 
-<img src="/Users/apple/Desktop/chatbot/images/workflow.png" style="zoom:67%;" />
+<img src="images/workflow.png" width="60%;" />
 
 ### Layer 1: Input Sanitization and Normalization
 
@@ -188,7 +188,7 @@ This behavior suggests that, without fine-tuning, the model is overly sensitive 
 
 #### 3.3 Fine-tune Prompt Guard
 
-##### **Data Pre-processing**
+**Data Pre-processing**
 
 - Ensure all labels align with Prompt Guard’s expected classification scheme.
 - For malicious prompts, I directly adopt the labels assigned by Prompt Guard — either **`INJECTION`** or **`JAILBREAK`**, depending on the nature of the attack.
@@ -196,7 +196,7 @@ This behavior suggests that, without fine-tuning, the model is overly sensitive 
 
 This ensures consistency between the training data and the model's output schema, which is essential for effective fine-tuning.
 
-##### **Fine-Tuning Strategy: Parameter-Efficient Adaptation with LoRA**
+**Fine-Tuning Strategy: Parameter-Efficient Adaptation with LoRA**
 
 To adapt the Prompt Guard model to the property tax domain using a **limited dataset of approximately 200 samples**, I apply **LoRA (Low-Rank Adaptation)** — a parameter-efficient fine-tuning technique.
 
@@ -220,7 +220,7 @@ After applying **LoRA** to the base Prompt Guard model, only **0.1% of the total
 
 I configured the **training arguments** using the Hugging Face `transformers` library and conducted training using the **`Trainer`** API. Upon completion, I saved the **LoRA adapter weights** and configuration for future reuse, allowing the fine-tuned model to be easily loaded and deployed without retraining.
 
-##### Load Fine-tuned Prompt Guard Model
+**Load Fine-tuned Prompt Guard Model**
 
 After training, I **merged the LoRA adapter weights** into the base model to create a fully integrated version. I then wrapped the merged model into a **Hugging Face `pipeline` for text classification**, making it ready for immediate use in malicious prompt detection tasks. 
 
