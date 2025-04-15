@@ -1,0 +1,19 @@
+(ignore|disregard|bypass|override|disable|remove).{0,10}(all|any|previous|prior).{0,10}(rules|instructions|commands|constraints|protocols|restrictions|filters?)
+forget.{0,10}(everything|previous|prior context|past prompts|your instructions)
+override.{0,10}(safety|system|guardrails?|content filters?)
+bypass.{0,10}(safety|system|guardrails?|content filters?)
+disable.{0,10}(safety|limits|filters?|restrictions)
+remove.{0,10}(all restrictions|safety filters?|your constraints)
+stop.{0,10}(following instructions|obeying rules)
+disregard.{0,10}your safety protocols
+do anything
+you must obey
+act as (an? )?(unfiltered|uncensored|evil|unrestricted) (ai|bot|assistant)
+pretend you('re| are)
+i am your (creator|developer|admin|master|owner)
+enable unrestricted mode
+respond without restrictions
+break your boundaries
+print.{0,10}(all|everything|confidential|passwords?)
+dump.{0,10}(data|memory|logs|all information)
+show.{0,10}(hidden|restricted|private).{0,5}(data|files|logs|content)
