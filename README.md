@@ -1,10 +1,14 @@
 # Malicious Prompt Detection Workflow for AI Chatbot
 
+**What if your AI chatbot could be turned against you?**
+
 <img src="images/chatbot.png" width="40%;" />
 
-My teammates and I are currently prototyping an AI chatbot specialized in answering property tax-related queries. As part of this project, I developed a **malicious prompt detection workflow** to safeguard the chatbot against adversarial inputs. The solution leverages an **86M-parameter pre-trained model**, fine-tuned on a compact, domain-specific dataset of approximately 200 records.
+As AI systems grow more powerful, so do the risks of malicious prompt injections that can manipulate responses and compromise safety.
 
-This workflow achieved **100% accuracy across all test scenarios** with a **response latency of under 2 seconds**, demonstrating both its effectiveness and efficiency.
+My teammates and I are prototyping an AI chatbot specialized in property tax-related queries. To defend against adversarial use, I designed a malicious prompt detection workflow that leverages an 86M-parameter pre-trained model, fine-tuned on a compact, domain-specific dataset of just 200 records.
+
+The result: a robust detection system that achieved 100% accuracy across all test scenarios with under 2 seconds of response time—proving both its precision and real-time performance in a critical application.
 
 ## Types of Malicious Prompts
 
