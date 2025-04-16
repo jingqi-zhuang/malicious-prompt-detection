@@ -8,8 +8,7 @@ As AI systems grow more powerful, so do the risks of malicious prompt injections
 
 My teammates and I are prototyping an AI chatbot specialized in property tax-related queries. To defend against adversarial use, I designed a malicious prompt detection workflow that leverages an 86M-parameter pre-trained model, fine-tuned on a compact, domain-specific dataset of just 200 records.
 
-The result: a robust detection system that achieved **100% accuracy** across all test scenarios with **under 2 seconds** of response time—proving both its precision and real-time performance in a critical application.
-
+The result: a robust detection system that achieved **100% accuracy** across all test scenarios with **under 2 seconds** of response time.
 ## Types of Malicious Prompts
 
 The malicious prompts detected by the workflow fall into five categories, primarily jailbreak and injection:
